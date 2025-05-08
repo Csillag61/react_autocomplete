@@ -56,11 +56,11 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
 
   // Clear selected person when input changes
   useEffect(() => {
-    if (query !== selectedPerson?.name) {
+    if (selectedPerson && query !== selectedPerson.name) {
       setSelectedPerson(null);
       onSelected(null);
     }
-  }, [query, selectedPerson?.name, onSelected]);
+  }, [query, selectedPerson, onSelected]);
 
   return (
     <div className={`dropdown ${isDropdownOpen ? 'is-active' : ''}`}>
