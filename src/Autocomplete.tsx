@@ -56,7 +56,7 @@ export const Autocomplete: React.FC<AutocompleteProps> = ({
 
   // Clear selected person when input changes
   useEffect(() => {
-    if (selectedPerson && query !== selectedPerson.name) {
+    if (selectedPerson && query.trim() && query !== selectedPerson.name) {
       setSelectedPerson(null);
       onSelected(null);
     }
